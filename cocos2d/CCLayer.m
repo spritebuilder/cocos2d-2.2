@@ -112,8 +112,10 @@
 		_accelerometerEnabled = enabled;
 		if( _isRunning ) {
 			if( enabled )
+                // TODO: Fix deprecation
 				[[UIAccelerometer sharedAccelerometer] setDelegate:(id<UIAccelerometerDelegate>)self];
 			else
+                // TODO: Fix deprecation
 				[[UIAccelerometer sharedAccelerometer] setDelegate:nil];
 		}
 	}
@@ -121,6 +123,7 @@
 
 -(void) setAccelerometerInterval:(float)interval
 {
+    // TODO: Fix deprecation
 	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:interval];
 }
 
@@ -378,6 +381,7 @@
 {
 #ifdef __CC_PLATFORM_IOS
 	if( _accelerometerEnabled )
+        // TODO: Fix deprecation
 		[[UIAccelerometer sharedAccelerometer] setDelegate:(id<UIAccelerometerDelegate>)self];
 #endif
 
@@ -394,6 +398,7 @@
 		[[director touchDispatcher] removeDelegate:self];
 
 	if( _accelerometerEnabled )
+        // TODO: Fix deprecation
 		[[UIAccelerometer sharedAccelerometer] setDelegate:nil];
 
 #elif defined(__CC_PLATFORM_MAC)
